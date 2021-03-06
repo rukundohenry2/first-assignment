@@ -1,6 +1,6 @@
 # first-assignment
 this repository is made up of two files
-firstassignment2 is the source code that is made in java
+firstassignment2 is the source code that is made in java.
 firstcoursework is the source code that is made in kotlin
 
 
