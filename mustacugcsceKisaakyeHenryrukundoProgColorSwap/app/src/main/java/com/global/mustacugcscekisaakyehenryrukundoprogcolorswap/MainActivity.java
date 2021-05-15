@@ -1,6 +1,8 @@
 package com.global.mustacugcscekisaakyehenryrukundoprogcolorswap;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setText("Tap to change color");
         textView.setTextSize(30);
-
+ 
 
         // Create Button Dynamically
         Button btnShow = new Button(this);
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 float green = rand.nextFloat();
                 textView.setText("r"+String.valueOf(red)+"        \ng"+String.valueOf(green)+"        \nb"+String.valueOf(blue));
                 textView.setTextColor(Color.rgb(red,green,blue));
+//              broadcast intent
+                String message=String.valueOf(red)+","+String.valueOf(green)+","+String.valueOf(blue);
+                Intent intent = new Intent();
+                intent.setAction("com.global.mustacugcscekisaakyehenryrukundoprogcolorswap");
+                intent.putExtra("message",message);
+                sendBroadcast(intent);
             }
         });
 
